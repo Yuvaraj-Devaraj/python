@@ -1,0 +1,10 @@
+firstname: easy
+lastname: bytes
+courses:
+  - YAML
+  - Spring Microservices
+  - Spring Security
+branches:
+  - Chennai
+  - Bengaluru
+  - Trichy
