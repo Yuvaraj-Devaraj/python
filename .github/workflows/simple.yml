@@ -1,16 +1,16 @@
 name: Shell Commands
 
-on:
-  push:
-    branches:
-      - master
-      - "feature/*"
-      - "feature/**"
-      - "!feature/featC"
-    tags:
-      - "v1.*"
-    paths:
-      - "**.js"
+on: pull_request
+  # push:
+  #   branches:
+  #     - master
+  #     - "feature/*"
+  #     - "feature/**"
+  #     - "!feature/featC"
+  #   tags:
+  #     - "v1.*"
+  #   paths:
+  #     - "**.js"
 
   # repository_dispatch:
   #  types: [build]
