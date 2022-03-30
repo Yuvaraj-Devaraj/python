@@ -43,7 +43,7 @@ jobs:
           echo Approved for : test Env >>  prodtestlogfile.txt
           git config --local user.email "$(git log --format='%ae' HEAD^!)"
           git config --local user.name "$(git log --format='%an' HEAD^!)"
-          echo Approved by: ${{ github.environment }} >> prodtestlogfile.txt
+          echo Approved by: ${{ github.event.review }} >> prodtestlogfile.txt
           echo --------------------------- >> prodtestlogfile.txt
           git add .
           git commit -m "Added to Logfile"
