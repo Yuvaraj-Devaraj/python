@@ -27,3 +27,24 @@ jobs:
           who-to-greet: Yuvaraj
       - name: Greeting time
         run: echo "${{ steps.greet.outputs.time }}"
+  DeployProd:
+    name: Deploy to Production 
+    needs: [Deploytest]
+    runs-on: ubuntu-latest
+    environment: 
+      name: test
+      url: 'http://www.myapp.com'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: |
+          date >> prodtestlogfile.txt
+          echo Approved for : test Env >>  prodtestlogfile.txt
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+          echo Approved by: ${{ github.environment }} >> prodtestlogfile.txt
+          echo --------------------------- >> prodtestlogfile.txt
+          git add .
+          git commit -m "Added to Logfile"
+          git push
+          echo I am deploying to Production!
