@@ -27,10 +27,10 @@ jobs:
           who-to-greet: Yuvaraj
       - name: Greeting time
         run: echo "${{ steps.greet.outputs.time }}"
-        
+
   DeployProd:
     name: Deploy to Production 
-    needs: [Deploytest]
+    needs: [run-github-action]
     runs-on: ubuntu-latest
     environment: 
       name: test
