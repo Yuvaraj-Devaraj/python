@@ -4,7 +4,6 @@ on: push
 
 jobs:
   run-github-actions:
-    name: github-actions
     runs-on: ubuntu-latest
     steps:
       - name: list files
@@ -31,7 +30,7 @@ jobs:
 
   DeployProd:
     name: Deploy to Production 
-    needs: [run-github-action]
+    needs: [run-github-actions]
     runs-on: ubuntu-latest
     environment: 
       name: test
