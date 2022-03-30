@@ -4,6 +4,7 @@ on: push
 
 jobs:
   run-github-actions:
+    name: github-actions
     runs-on: ubuntu-latest
     steps:
       - name: list files
