@@ -1,10 +1,10 @@
 openapi: 3.0.1
 info:
-  title: /${productDomain}/${retailer}/itm/shipment/v1
+  title: asg/ae/rdg/itmcns
   description: Consignment Shipment API - V1.0.0
   version: v1
 servers:
-  - url: https://{endpointurl}
+  - url: https://logic-rpic-afg-rdg-ts-weu.azurewebsites.net:443/api/wf-itmcns-shp-in-v1/triggers/manual/invoke
 paths:
   /:
     post:
