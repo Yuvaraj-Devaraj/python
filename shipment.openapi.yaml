@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: {productDomain}/{retailer}
+  title: '{productDomain}/{retailer}'
   description: Consignment Shipment API - V1.0.0
   version: v1
 servers:
