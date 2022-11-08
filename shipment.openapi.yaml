@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: {retailer}/{retailerUnit}/{productDomain}/{integration}
+  title: /asg/ae/rdg/tms
   description: Consignment Shipment API - V1.0.0
   version: v1
 servers:
