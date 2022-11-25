@@ -1,0 +1,41 @@
+openapi: 3.0.1
+info:
+  title: schema/swagger
+  description: ''
+  version: v1
+servers:
+  - url: https://{endpointurl}/schema/swagger/
+paths:
+  '/get/{adapter}':
+    get:
+      tags:
+        - RPIC
+      summary: get-swagger
+      description: Returns the Swagger definition for the specified service and adapter
+      operationId: logic-adapter-sftp
+      parameters:
+        - name: adapter
+          in: path
+          description: Adapter name
+          required: true
+          schema:
+            enum:
+              - logic.adapters.sftp
+            type: string
+            default: logic.adapters.sftp
+      responses:
+        '200':
+          description: The file contents of the requested Swagger definition.
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

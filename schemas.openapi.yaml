@@ -1,0 +1,39 @@
+openapi: 3.0.1
+info:
+  title: schema/openapi
+  description: ''
+  version: v1
+servers:
+  - url:  https://{endpointurl}/schema/openapi/v1
+paths:
+  '/get/{schema}':
+    get:
+      summary: get-schema
+      description: Gets an Open API schema by its filename.
+      operationId: get
+      parameters:
+        - name: schema
+          in: path
+          description: The filename of the schema to fetch
+          required: true
+          schema:
+            enum:
+              - rdg.tms.openapi.schema.v1.yaml
+            type: string
+            default: rdg.tms.openapi.schema.v1.yaml
+      responses:
+        '200':
+          description: The file contents of the requested schema.
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
